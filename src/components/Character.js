@@ -32,7 +32,7 @@ export default class Character extends React.Component {
         filmData: [],
         filmDataLoaded: false,
       });
-      
+
     this.turnOverlayOn = this.turnOverlayOn.bind();
     this.turnOverlayOff = this.turnOverlayOff.bind();
   }
@@ -71,7 +71,7 @@ export default class Character extends React.Component {
   render() {
     return (
       <div>
-        <CharacterImage click={this.turnOverlayOn} img={this.props.img} />
+        <CharacterImage click={this.turnOverlayOn} img={this.props.img} name={this.props.name} />
 
         <Overlay overlay={this.state.overlay}>
           <OverlayHeader
@@ -84,7 +84,7 @@ export default class Character extends React.Component {
             )}
           />
           <OverlayText>{`${this.props.name}`}</OverlayText>
-          <Image src={this.props.img} />
+          <Image src={this.props.img} alt={this.props.name}/>
           <MovieDetails
             filmDataLoaded={this.state.filmDataLoaded}
             filmData={this.state.filmData}

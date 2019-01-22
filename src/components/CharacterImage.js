@@ -13,7 +13,7 @@ export default props => {
     <span onClick={props.click}>
       <ScrollOverProvider left={'100%'}>
         <CircleImageContainer>
-          <CircleImage src={props.img} />
+          <CircleImage src={props.img} alt={props.name}/>
         </CircleImageContainer>
       </ScrollOverProvider>
     </span>

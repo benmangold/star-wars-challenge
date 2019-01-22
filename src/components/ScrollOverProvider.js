@@ -20,6 +20,7 @@ export default class ScrollOverProvider extends React.Component {
               <ScrollOverImage
                 src={config.MAGNIFYING_GLASS_URL}
                 display={this.props.display}
+                alt='search'
               />
             )}
           </ScrollOverContent>
