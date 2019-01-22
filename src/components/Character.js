@@ -1,18 +1,14 @@
 import React from 'react';
+import config from '../react.config.js';
+
+import CharacterImage from './CharacterImage';
 import Overlay from './Overlay.js';
 import OverlayHeader from './OverlayHeader.js';
 import MovieDetails from './MovieDetails';
-import ScrollOverProvider from './ScrollOverProvider';
 
 import { ButtonExit } from '../styled-components/ButtonStyles.js';
 import Image from '../styled-components/Image';
-import {
-  CircleImageContainer,
-  CircleImage,
-} from '../styled-components/CircleImageContainer.js';
 import { OverlayText } from '../styled-components/OverlayStyles';
-
-import config from '../react.config.js';
 
 export default class Character extends React.Component {
   constructor(props) {
@@ -36,20 +32,21 @@ export default class Character extends React.Component {
         filmData: [],
         filmDataLoaded: false,
       });
+      
     this.turnOverlayOn = this.turnOverlayOn.bind();
     this.turnOverlayOff = this.turnOverlayOff.bind();
   }
 
   fetchFilmData() {
     if (this.props.films) {
-      let filmData = [];
+      const filmData = [];
       Promise.all(
         this.props.films.map((item, index, array) => {
           return new Promise((resolve, reject) => {
             fetch(item)
-              .then(response => response.json())
-              .then(json => {
-                filmData.push(json);
+              .then(film => film.json())
+              .then(film => {
+                filmData.push(film);
                 resolve();
               })
               .catch(err => reject(err));
@@ -74,13 +71,7 @@ export default class Character extends React.Component {
   render() {
     return (
       <div>
-        <span onClick={this.turnOverlayOn}>
-          <ScrollOverProvider left={'100%'}>
-            <CircleImageContainer>
-              <CircleImage src={this.props.img} />
-            </CircleImageContainer>
-          </ScrollOverProvider>
-        </span>
+        <CharacterImage click={this.turnOverlayOn} img={this.props.img} />
 
         <Overlay overlay={this.state.overlay}>
           <OverlayHeader

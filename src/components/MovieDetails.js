@@ -17,13 +17,12 @@ export default props => {
     if (props.error) {
       return (
         <OverlayText>
-          This is not the droid you're looking for, incorrect URL
+          This is not the droid you are looking for (Incorrect URL)
         </OverlayText>
       );
     } else {
-      // loading movie data
       return (
-        <div>
+        <div>  
           <img src='./spinner.svg' />
         </div>
       );

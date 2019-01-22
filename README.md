@@ -4,7 +4,7 @@
 
 A Full Stack App to learn about Star Wars Characters
 
-git and node are required, see INSTALL.md for detailed instructions
+git and node are required, see `INSTALL.md` for detailed instructions
 
 # Clone Repo and Download Dependencies
 
