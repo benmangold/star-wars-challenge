@@ -4,12 +4,12 @@
 
 A Full Stack App to learn about Star Wars Characters
 
-# Installation 
+git and node are required, see INSTALL.md for detailed instructions
 
-git is required
+# Clone Repo and Download Dependencies
 
 ```bash
-git clone ...
+git clone https://github.com/benmangold/star-wars-challenge.git
 
 cd star-wars-challenge
 
