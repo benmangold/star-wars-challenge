@@ -27,6 +27,15 @@ npm run server-dev
 
 # Production
 
+Using Node.js
 ```
 npm run start
+```
+
+Using pm2
+
+```
+npm install pm2@latest -g
+npm run react
+pm2 start server.js
 ```
